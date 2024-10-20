@@ -1,0 +1,9 @@
+.cvEditor{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cvEditor > div {
+    border: 1px solid;
+}
