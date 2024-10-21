@@ -11,4 +11,10 @@ html, body{
     width: 100%;
     display: flex;
     flex-direction: column;
+    --color-scheme-background: #7e22ce;
+    --color-scheme-background-light: #ede9fe;
+    --color-scheme-border-light: #c084fc;
+    --color-scheme-border-dark: #6b21a8;
+    --color-scheme-dark: #581c87;
+    --color-button-click: #9c2aff;
 }

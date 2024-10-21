@@ -6,38 +6,24 @@ export default function CVEditor(){
     return (
         <>
         <div className="cvEditor">
-          <div className='editGeneralInfo'>
-            General Information
-            <form>
-              <div>
-                <label htmlFor="fullname">Name: </label>
-                <input type="text" name="fullname" id="fullname" className="fullname"/>
-              </div>
-              <div>
-                <label htmlFor="number">Phone Number: </label>
-                <input type="tel" name="number" id="number" className="number"/>
-              </div>
-              <div>
-                <label htmlFor="email">Email: </label>
-                <input type="email" name="email" id="email" className="email"/>
-              </div>
-              <div>
-                <label htmlFor="linkedin">LinkedIn Profile: </label>
-                <input type="url" name="linkedin" id="linkedin" className="linkedin"/>
-              </div>
-              <div>
-                <label htmlFor="github">GitHub Profile: </label>
-                <input type="url" name="github" id="github" className="github"/>
-              </div>
-              <div>
-                <label htmlFor="profile">Profile Description: </label>
-                <textarea name="profile" rows="4" cols="50" />
-              </div>
-            </form>
-          </div>
+          <form className='editGeneralInfo'>
+            <fieldset>
+              <legend>General Information</legend>
+              <input type="text" name="fullname" id="fullname" className="fullname" placeholder='Full Name'/>
+              <input type="tel" name="number" id="number" className="number" placeholder='Phone Number'/>
+              <input type="email" name="email" id="email" className="email" placeholder='Email'/>
+              <input type="url" name="linkedin" id="linkedin" className="linkedin" placeholder='LinkedIn Profile'/>
+              <input type="url" name="github" id="github" className="github" placeholder='GitHub Profile'/>
+              <input type="url" name="website" id="website" className="website" placeholder='Personal Website'/>
+              <textarea name="profile" rows="3" placeholder='Profile Description' />
+            </fieldset>
+          </form>
 
           <div className='editExperience'>
-            Experience
+            <div className='sectionHeader'>
+              <div className='sectionTitle'>Experience</div>
+              <div className='addItemBtn'>+</div>
+            </div>
             <form>
               <div>
                 <label htmlFor="role">Role: </label>
@@ -67,7 +53,10 @@ export default function CVEditor(){
           </div>
 
           <div className='editProjects'>
-            Projects
+            <div className="sectionHeader">
+              <div className='sectionTitle'>Projects</div>
+              <div className='addItemBtn'>+</div>
+            </div>
             <form action="">
               <div>
                 <label htmlFor="name">Name: </label>
@@ -85,7 +74,10 @@ export default function CVEditor(){
           </div>
 
           <div className='editEducation'>
-            Education
+            <div className="sectionHeader">
+              <div className='sectionTitle'>Education</div>
+              <div className='addItemBtn'>+</div>
+            </div>
             <form action="">
               <div>
                 <label htmlFor="institutionName">Institution Name: </label>
@@ -110,7 +102,10 @@ export default function CVEditor(){
             </form>
           </div>
           <div className='editSkills'>
-            Technical Skills
+            <div className='sectionHeader'>
+              <div className='sectionTitle'>Technical Skills</div>
+              <div className='addItemBtn'>+</div>
+            </div>
             <form action="">
               <div>
                 <label htmlFor="languages">Languages: </label>
