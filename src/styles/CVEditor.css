@@ -5,19 +5,70 @@
 }
 
 .cvEditor > div {
-    border: 2px solid;
-    padding: 24px;
+    border: 2px solid var(--color-scheme-border-dark);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 24px;
+
 }
+
+.description{
+    resize: none;
+    grid-column: span 2;
+}
+
+.cvEditor .addItemBtn{
+    background-color: var(--color-button-click);
+    border-radius: 50%;
+    font-size: 3em;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    user-select: none;
+}
+
+.addItemBtn:hover{
+    cursor: pointer;
+    background-color: var(--color-scheme-background);
+}
+
 
 .sectionHeader{
     display: flex;
     align-items: center;
 }
 
+form{
+    display: none;
+}
+
+.editGeneralInfo{
+    display: block;
+}
+
+input, 
+textarea{
+    border: 2px solid var(--color-scheme-border-light);
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 1em;
+}
+
+input[type="date"]{
+    font-size: 1.2em;
+    padding: 4px;
+}
+
+input:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--color-scheme-border-dark);
+}
 
 .editGeneralInfo legend,
 .sectionTitle{
@@ -29,27 +80,48 @@
 
 .editGeneralInfo > fieldset{
     border-radius: 16px;
-    border: 2px solid black;
+    border: 2px solid var(--color-scheme-border-dark);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     padding: 24px;
 }
 
-textarea{
-    resize: none;
+.editExperience > form,
+.editProjects > form,
+.editEducation > form,
+.editSkills > form{
+    /* display: grid; */
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
 }
 
-.cvEditor .addItemBtn{
-    background-color: var(--color-scheme-background);
-    border-radius: 50%;
-    font-size: 2em;
-    height: 36px;
-    width: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.editExperience .company{
+    grid-column: span 2;
+}
+
+.editEducation .institutionName{
+    grid-column: span 2;
+}
+
+.submitAddItemBtn,
+.cancelAddItemBtn{
+    font-size: 1.4em;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}
+
+.cancelAddItemBtn:hover{
+    cursor: pointer;
+}
+
+.submitAddItemBtn{
+    background-color: var(--color-button-click);
     color: white;
 }
 
-/*  */
+.submitAddItemBtn:hover{
+    background-color: var(--color-scheme-background);
+    cursor: pointer;
+}
