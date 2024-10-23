@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../styles/App.css'
-import CVEditor from './CVEditor'
+import { CVEditor } from './CVEditor'
 
 function App() {
   const [count, setCount] = useState(0)

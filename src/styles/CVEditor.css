@@ -47,9 +47,6 @@ form{
     display: none;
 }
 
-.editGeneralInfo{
-    display: block;
-}
 
 input, 
 textarea{
@@ -70,22 +67,16 @@ textarea:focus {
     border-color: var(--color-scheme-border-dark);
 }
 
-.editGeneralInfo legend,
 .sectionTitle{
     font-size: 2em;
     color: var(--color-scheme-dark);
     font-weight: bold;
     flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.editGeneralInfo > fieldset{
-    border-radius: 16px;
-    border: 2px solid var(--color-scheme-border-dark);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding: 24px;
-}
 
 .editExperience > form,
 .editProjects > form,
@@ -96,13 +87,6 @@ textarea:focus {
     grid-template-columns: 1fr 1fr;
 }
 
-.editExperience .company{
-    grid-column: span 2;
-}
-
-.editEducation .institutionName{
-    grid-column: span 2;
-}
 
 .submitAddItemBtn,
 .cancelAddItemBtn{

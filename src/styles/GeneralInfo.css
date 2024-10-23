@@ -1,0 +1,20 @@
+
+.editGeneralInfo{
+    display: block;
+}
+
+.editGeneralInfo > fieldset{
+    border-radius: 16px;
+    border: 2px solid var(--color-scheme-border-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 24px;
+}
+
+.editGeneralInfo legend{
+    font-size: 2em;
+    color: var(--color-scheme-dark);
+    font-weight: bold;
+    flex: 1;
+}
