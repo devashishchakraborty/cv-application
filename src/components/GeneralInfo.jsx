@@ -1,6 +1,5 @@
 import "../styles/GeneralInfo.css"
 import { useState } from "react";
-import { hideAddItemForm, showAddItemForm } from "./CVEditor";
 
 function GeneralInfo(){
     return (

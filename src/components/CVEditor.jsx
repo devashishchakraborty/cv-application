@@ -6,29 +6,19 @@ import Projects from './Projects';
 import Education from './Education';
 import Skills from './Skills';
 
-const showAddItemForm = (e) => {
-  const form = e.currentTarget.parentElement.nextElementSibling;
-  form.style.display = "grid";
-}
 
-const hideAddItemForm = (e) => {
-  const form = e.currentTarget.parentElement;
-  form.style.display = "none";
-}
+export default function CVEditor(){
 
-
-function CVEditor(){
+  const [activeForm, setActiveForm] = useState("")
   return (
       <>
       <div className="cvEditor">
         <GeneralInfo />
-        <Experience />
-        <Projects />
-        <Education />
-        <Skills />
+        <Experience activeForm={activeForm} setActiveForm={setActiveForm}/>
+        <Projects activeForm={activeForm} setActiveForm={setActiveForm}/>
+        <Education activeForm={activeForm} setActiveForm={setActiveForm}/>
+        <Skills activeForm={activeForm} setActiveForm={setActiveForm}/>
       </div>
       </>
   )
 }
-
-export {showAddItemForm, hideAddItemForm, CVEditor}
