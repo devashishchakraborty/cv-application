@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 24px;
+    padding: 16px;
 
 }
 
@@ -22,9 +22,9 @@
 .cvEditor .addItemBtn{
     background-color: var(--color-button-click);
     border-radius: 50%;
-    font-size: 3em;
-    height: 48px;
-    width: 48px;
+    font-size: 2.5em;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@ textarea:focus {
 }
 
 .sectionTitle{
-    font-size: 2em;
+    font-size: 1.6em;
     color: var(--color-scheme-dark);
     font-weight: bold;
     flex: 1;

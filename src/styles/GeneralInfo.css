@@ -9,11 +9,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    padding: 24px;
+    padding: 16px;
 }
 
 .editGeneralInfo legend{
-    font-size: 2em;
+    font-size: 1.6em;
     color: var(--color-scheme-dark);
     font-weight: bold;
     flex: 1;
