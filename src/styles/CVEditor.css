@@ -1,7 +1,7 @@
 .cvEditor{
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
 }
 
 .cvEditor > div {
@@ -56,9 +56,15 @@ textarea{
     font-size: 1em;
 }
 
-input[type="date"]{
-    font-size: 1.2em;
-    padding: 4px;
+select{
+    padding: 4px 8px;
+    font-size: 1em;
+}
+
+.startDate, .endDate{
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 input:focus, 
@@ -80,8 +86,7 @@ textarea:focus {
 
 .editExperience > form,
 .editProjects > form,
-.editEducation > form,
-.editSkills > form{
+.editEducation > form{
     /* display: grid; */
     gap: 16px;
     grid-template-columns: 1fr 1fr;
@@ -108,4 +113,27 @@ textarea:focus {
 .submitAddItemBtn:hover{
     background-color: var(--color-scheme-background);
     cursor: pointer;
+}
+
+
+.editGeneralInfo > fieldset,
+.editSkills > fieldset{
+    border-radius: 16px;
+    border: 2px solid var(--color-scheme-border-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px;
+}
+
+.editGeneralInfo legend,
+.editSkills legend{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.6em;
+    color: var(--color-scheme-dark);
+    font-weight: bold;
+    flex: 1;
+    padding: 0 8px;
 }
