@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/Projects.css"
 
 
-function Projects({ activeForm, setActiveForm }){
+function Projects({ activeForm, setActiveForm, projectsList, handleSubmit }){
     return (
         <div className='editProjects'>
           <div className="sectionHeader">

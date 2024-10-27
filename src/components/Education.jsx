@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "../styles/Education.css"
+import { populateYears } from "./CVEditor";
 
 
-function Education({ activeForm, setActiveForm }){
+function Education({ activeForm, setActiveForm, educationList, handleSubmit }){
     return (
         <div className='editEducation'>
         <div className="sectionHeader">
@@ -18,13 +19,41 @@ function Education({ activeForm, setActiveForm }){
             <input type="text" id="institutionName" name="institutionName" className="institutionName" placeholder='Institution Name'/>
             <input type="text" id="programmeName" name="programmeName" className="programmeName" placeholder='Programme Name'/>
             <input type="text" name="location" id="location" className="location" placeholder='Location'/>
-            <div>
-              <label htmlFor="startDate">Start Date: </label>
-              <input type="date" name="startDate" id="startDate" className="startDate"/>
+            <div className="startDate">
+              Start Date:
+              <select id="month" name="month">
+                <option selected>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+              <select id="year" name="year">{ populateYears() }</select>
             </div>
-            <div>
-              <label htmlFor="endDate">End Date: </label>
-              <input type="date" name="endDate" id="endDate" className="endDate"/>
+            <div className="endDate">
+              End Date:
+              <select id="month" name="month">
+                <option selected>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+              <select id="year" name="year">{ populateYears() }</select>
             </div>
             <button className='submitAddItemBtn'>Add</button>
             <button className='cancelAddItemBtn' type='reset' onClick={() => setActiveForm('')}>Cancel</button>
