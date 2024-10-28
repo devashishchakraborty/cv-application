@@ -4,14 +4,13 @@ import { populateYears } from "./CVEditor";
 
 function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
   const [newExperience, setNewExperience] = useState({
-    company:"",
+    companyName:"",
     role:"",
     location:"",
     startMonth:"",
     startYear:"",
     endMonth:"",
     endYear:"",
-    EndDate:"",
     description:""
   })
 
@@ -21,11 +20,26 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
     setNewExperience((prev) => ({...prev, [name]:value }))
   }
 
+  const handleClear = (e) => {
+    setActiveForm("")
+    setNewExperience({
+      companyName:"",
+      role:"",
+      location:"",
+      startMonth:"",
+      startYear:"",
+      endMonth:"",
+      endYear:"",
+      description:""
+    })
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     onSubmit(newExperience)
+    setActiveForm("")
     setNewExperience({
-      company:"",
+      companyName:"",
       role:"",
       location:"",
       startMonth:"",
@@ -50,7 +64,7 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
       { 
         activeForm == "editExperience" ? (
           <form onSubmit={handleSubmit}>
-            <input type="text" name="company" id="company" className="company" placeholder='Company Name' value={newExperience.company} onChange={(e)=>handleChange(e)} required/>
+            <input type="text" name="companyName" id="companyName" className="companyName" placeholder='Company Name' value={newExperience.companyName} onChange={(e)=>handleChange(e)} required/>
             <input type="text" name="role" id="role" className="role" placeholder='Role' value={newExperience.role} onChange={(e)=>handleChange(e)} required/>
             <input type="text" name="location" id="location" className="location" placeholder='Location' value={newExperience.location} onChange={(e)=>handleChange(e)} required/>
             <div className="startDate">
@@ -71,14 +85,14 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
                 <option>December</option>
               </select>
               <select id="startYear" name="startYear" onChange={(e)=>handleChange(e)}>
-              <option value="" disabled selected hidden>Year</option>
+                <option value="" disabled selected hidden>Year</option>
                 { populateYears() }
               </select>
             </div>
             <div className="endDate">
               End Date:
               <select id="endMonth" name="endMonth" onChange={(e)=>handleChange(e)}>
-              <option value="" disabled selected hidden>Month</option>
+                <option value="" disabled selected hidden>Month</option>
                 <option>January</option>
                 <option>February</option>
                 <option>March</option>
@@ -93,15 +107,32 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
                 <option>December</option>
               </select>
               <select id="endYear" name="endYear" onChange={(e)=>handleChange(e)}>
-              <option value="" disabled selected hidden>Year</option>
-              { populateYears() }
+                <option value="" disabled selected hidden>Year</option>
+                { populateYears() }
               </select>
             </div>
             <textarea name="description" id="description" rows="4" className='description' placeholder='Description' value={newExperience.description} onChange={(e)=>handleChange(e)} required></textarea>
-            <button className='submitAddItemBtn'>Add</button>
-            <button className='cancelAddItemBtn' type='reset' onClick={() => setActiveForm("")}>Cancel</button>
+            <button className='submitAddItemBtn' type="submit">Add</button>
+            <button className='cancelAddItemBtn' type='reset' onClick={(e) => handleClear(e)}>Cancel</button>
         </form>
-      ): null}
+      ): (experienceList.length > 0 ? (
+        <div className="experienceList">
+          {
+            experienceList.map((experience) => {
+              return (
+                <div className="experienceDetails">
+                  <div className="companyName">{experience.companyName}</div>
+                  <div className="jobRole">{experience.role}</div>
+                  <div className="companyLocation">{experience.location}</div>
+                  <div className="jobStartDate">{experience.startMonth} {experience.startYear}</div>
+                  <div className="jobEndDate">{experience.endMonth} {experience.endYear}</div>
+                  <div className="workDescription">{experience.description}</div>
+                </div>
+              )
+            })
+          }
+        </div>
+      ) : null)}
     </div>
   )
 }
