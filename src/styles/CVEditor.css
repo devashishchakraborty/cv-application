@@ -14,9 +14,10 @@
 
 }
 
-.description{
+form .description{
     resize: none;
     grid-column: span 2;
+    font-size: 1.2em;
 }
 
 .cvEditor .addItemBtn{
@@ -87,7 +88,6 @@ textarea:focus {
 .editExperience > form,
 .editProjects > form,
 .editEducation > form{
-    /* display: grid; */
     gap: 16px;
     grid-template-columns: 1fr 1fr;
 }
@@ -136,4 +136,48 @@ textarea:focus {
     font-weight: bold;
     flex: 1;
     padding: 0 8px;
+}
+
+.educationList,
+.experienceList,
+.projectsList{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.educationDetails,
+.experienceDetails,
+.projectDetails{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border-top: 1px solid var(--color-scheme-border-dark);
+    padding-top: 8px;
+
+    .editBtn, .deleteBtn{
+        display: flex;
+        border-radius: 50%;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .editBtn{
+        background-color: #e0e0e0;
+    }
+
+    .editBtn:hover{
+        background-color: #d0d0d0;
+    }
+
+    .deleteBtn{
+        background-color: #DC143C;
+        color: white;
+    }
+
+    .deleteBtn:hover {
+        background-color: #c53030;
+    }
+    
+
 }
