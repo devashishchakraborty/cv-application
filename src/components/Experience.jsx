@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "../styles/Experience.css"
-import { populateYears } from "./CVEditor";
 import { v4 as uuidv4 } from 'uuid';
 
-function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
+function Experience({ activeForm, setActiveForm, experienceList, PopulateYears, onSubmit, onDelete }){
   const [newExperience, setNewExperience] = useState({
     id: uuidv4(),
     companyName:"",
@@ -46,8 +45,6 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
     setActiveForm("");
     e.preventDefault();
     clearForm();
-
-    if (submissionType === "Edit")  setNewExperience((prev) => ({...prev, newExperience}))
     onSubmit(newExperience, submissionType);
   }
 
@@ -99,7 +96,7 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
               </select>
               <select id="startYear" name="startYear" defaultValue={newExperience.startYear.length > 0 ? newExperience.startYear : "Year"} onChange={(e)=>handleChange(e)} required>
                 <option disabled hidden>Year</option>
-                { populateYears() }
+                <PopulateYears />
               </select>
             </div>
             <div className="endDate">
@@ -121,7 +118,7 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
               </select>
               <select id="endYear" name="endYear" defaultValue={newExperience.endYear.length > 0 ? newExperience.endYear : "Year"} onChange={(e)=>handleChange(e)} required>
                 <option disabled hidden>Year</option>
-                { populateYears() }
+                <PopulateYears />
               </select>
             </div>
             <textarea name="description" id="description" rows="4" className='description' placeholder='Description' value={newExperience.description} onChange={(e)=>handleChange(e)} required></textarea>
@@ -140,7 +137,7 @@ function Experience({ activeForm, setActiveForm, experienceList, onSubmit }){
                     <div className="companyLocation">{experience.location}</div>
                   </div>
                   <div className="editBtn" onClick={() => handleEditItem(experience.id)}><svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.6em" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="m14.06 9l.94.94L5.92 19H5v-.92zm3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94z"/></svg></div>
-                  <div className="deleteBtn"><svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.6em" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6zM8 9h8v10H8zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
+                  <div className="deleteBtn" onClick={() => onDelete(experience.id)}><svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.6em" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6zM8 9h8v10H8zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"/></svg></div>
                 </div>
               )
             })

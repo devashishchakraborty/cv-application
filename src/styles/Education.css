@@ -3,5 +3,13 @@
 }
 
 .educationDetails{
-    display: grid;
+    .institutionName{
+        grid-column: span 2;
+        font-size: 1.4em;
+        color: var(--color-scheme-dark);
+    }
+
+    .location{
+        justify-self: end;
+    }
 }

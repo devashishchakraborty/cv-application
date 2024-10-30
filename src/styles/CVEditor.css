@@ -150,10 +150,19 @@ textarea:focus {
 .experienceDetails,
 .projectDetails{
     display: flex;
-    gap: 16px;
+    gap: 8px;
     align-items: center;
     border-top: 1px solid var(--color-scheme-border-dark);
     padding-top: 8px;
+    
+    .items{
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        padding-right: 16px;
+    }
+
 
     .editBtn, .deleteBtn{
         display: flex;

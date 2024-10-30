@@ -3,8 +3,7 @@ import "../styles/Projects.css";
 import { v4 as uuidv4 } from 'uuid';
 
 
-
-function Projects({ activeForm, setActiveForm, projectsList, onSubmit }) {
+function Projects({ activeForm, setActiveForm, projectsList, onSubmit, onDelete }) {
   const [newProject, setNewProject] = useState({
     id: uuidv4(),
     name: "",
