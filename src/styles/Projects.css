@@ -1,0 +1,9 @@
+.projectDetails .items{
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    .name{
+        font-size: 1.2em;
+        color: var(--color-scheme-dark);
+    }
+}

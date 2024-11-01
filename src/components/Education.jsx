@@ -130,7 +130,7 @@ function Education({ activeForm, setActiveForm, educationList, PopulateYears, on
             {
               educationList.map((education) => {
                 return (
-                  <div className="educationDetails">
+                  <div className="educationDetails">&#9679;
                     <div className="items">
                       <div className="institutionName">{education.institutionName}</div>
                       <div className="programmeName">{education.programmeName}</div>

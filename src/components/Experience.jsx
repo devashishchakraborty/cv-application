@@ -130,7 +130,7 @@ function Experience({ activeForm, setActiveForm, experienceList, PopulateYears, 
           {
             experienceList.map((experience) => {
               return (
-                <div key={experience.id} className="experienceDetails">
+                <div key={experience.id} className="experienceDetails">&#9679;
                   <div className="items">
                     <div className="jobRole">{experience.role}</div>
                     <div className="name">{experience.companyName}</div>
