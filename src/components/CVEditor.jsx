@@ -7,24 +7,8 @@ import Education from './Education';
 import Skills from './Skills';
 
 
-function CVEditor() {
+function CVEditor({generalInfo, skills, experience, projects, education, setGeneralInfo, setSkills, setExperience, setEducation, setProjects}) {
   const [activeForm, setActiveForm] = useState("")
-  const [generalInfo, setGeneralInfo] = useState({
-    fullname: "",
-    number: "",
-    email: "",
-    linkedin: "",
-    github: "",
-    website: "",
-    description: ""
-  })
-
-  const [skills, setSkills] = useState({
-    languages: "",
-    frameworks: "",
-    tools: "",
-    certifications: ""
-  })
 
   // Populating Years for Item submit form
   const PopulateYears = () => {
@@ -37,11 +21,6 @@ function CVEditor() {
     for (let i = 0; i <= 50; i++) years.push(<option key={i}>{currentYear - i}</option>)
     return years;
   }
-
-
-  const [experience, setExperience] = useState([])
-  const [projects, setProjects] = useState([])
-  const [education, setEducation] = useState([])
 
   // Sections involving real time data input
   function handleGeneralInfoChange(e) {

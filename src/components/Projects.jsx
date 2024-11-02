@@ -39,10 +39,10 @@ function Projects({ activeForm, setActiveForm, projectsList, onSubmit, onDelete 
     onSubmit(newProject, submissionType);
   }
 
-  const handleAddItem = () => {
+  const handleAddItem = (form) => {
     setSubmissionType("Add");
     clearForm();
-    setActiveForm("editProject");
+    setActiveForm("editProjects");
   }
 
   const handleEditItem = (id) => {

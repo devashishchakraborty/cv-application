@@ -1,9 +1,58 @@
-import { useState } from 'react'
-import '../styles/App.css'
-import CVEditor from './CVEditor'
+import { useState } from 'react';
+import '../styles/App.css';
+import CVEditor from './CVEditor';
+import CVPreview from './CVPreview';
+import { v4 as uuidv4 } from 'uuid';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [generalInfo, setGeneralInfo] = useState({
+    fullname: "John Doe",
+    number: "1234567890",
+    email: "example@example.com",
+    linkedin: "https://linkedin.com/in/example",
+    github: "https://github.com/examplename",
+    website: "https://example.com",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel ipsam rem voluptatum cupiditate quibusdam accusamus molestias, eaque delectus incidunt maxime excepturi eligendi quaerat, nobis dignissimos, possimus unde at aliquid ea."
+  })
+
+  const [skills, setSkills] = useState({
+    languages: "Javascript, Python, SQL, C/C++, HTML/CSS",
+    frameworks: "ReactJS, Flask, Pandas, NumPy, Matplotlib",
+    tools: "Git, Linux, Jupyter Notebook, DBeaver, VS Code",
+    certifications: "TheOdinProject, Andrew Ng's ML Course, Python for Everybody Coursera"
+  })
+
+  const [experience, setExperience] = useState([{
+    id: uuidv4(),
+    companyName: "Microhard",
+    role: "Python Intern",
+    location: "New York",
+    startMonth: "January",
+    startYear: "2023",
+    endMonth: "June",
+    endYear: "2024",
+    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ad dolorum voluptates aut, neque error eum adipisci mollitia debitis recusandae, sunt cupiditate illum quod quis voluptate tempora veniam omnis? Ratione!"
+  }])
+
+  const [projects, setProjects] = useState([{
+    id: uuidv4(),
+    name: "Example Project",
+    technologiesUsed: "Javascript, SQL, CSS",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi facilis magnam quos totam maxime debitis repellendus esse corporis libero, sed id expedita! Accusamus sequi repellendus quam velit necessitatibus, recusandae harum."
+  }])
+  
+  const [education, setEducation] = useState([{
+    id: uuidv4(),
+      institutionName:"American University",
+      programmeName:"Masters in Computer Science",
+      location:"California",
+      startMonth:"June",
+      startYear:"2023",
+      endMonth:"Nov",
+      endYear:"2024",
+  }])
+  
 
   return (
     <>
@@ -12,8 +61,25 @@ function App() {
         CV Application
       </header>
       <main>
-        <CVEditor />
-        <div className="cvPreview"></div>
+        <CVEditor 
+          generalInfo={generalInfo}
+          skills={skills}
+          experience={experience}
+          projects={projects}
+          education={education}
+          setGeneralInfo={setGeneralInfo}
+          setExperience={setExperience}
+          setSkills={setSkills}
+          setEducation={setEducation}
+          setProjects={setProjects}
+        />
+        <CVPreview 
+          generalInfo={generalInfo}
+          experience={experience}
+          projects={projects}
+          education={education}
+          skills={skills}
+        />
       </main>
       <footer></footer>
     </>
