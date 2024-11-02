@@ -1,0 +1,176 @@
+@import url("../fonts/Serif/cmun-serif.css");
+
+
+/* General Styles */
+.cvPreview{
+    font-family: 'Computer Modern Serif', serif;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px;
+    border: none;
+    box-shadow: 0 0 8px #bbb;
+    font-size: 0.9em;
+    padding: 24px;
+    .profile .description,
+    .previewSkills .details,
+    .items {
+        margin-left: 16px;
+        margin-top: 8px;
+        margin-right: 8px;
+    }
+
+    .previewSkills .details{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .items{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+ul{
+    margin: 0;
+}
+
+.cvPreview .links{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    flex-wrap: wrap;
+    row-gap: 8px;
+
+    >div{
+        padding: 0 8px;
+    }
+
+    > div + div{
+        border-left: 1px solid;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid;
+    }
+
+}
+
+.fullname{
+    margin: 0;
+    
+}
+
+.cvPreview .title{
+    border-bottom: 1px solid;
+    font-size: 1.2em;
+}
+
+/* Top Section and Profile Description */
+.previewGeneralInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Experience Preview Section */
+.previewExperience .items{
+    .job .about{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .role{
+        font-weight: bold;
+    }
+
+    .dates, .location{
+        justify-self: end;
+    }
+
+    .companyName, .location{
+        font-style: italic;
+        /* font-size: 0.9em; */
+    }
+}
+
+/* For Projects */
+.previewProjects .items .project{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .about{
+        display: flex;
+    }
+    .name{
+        font-weight: bold;
+        margin-right: 8px;
+        border-bottom: 1px solid;
+    }
+
+    .technologiesUsed{
+        font-style: italic;
+        padding-left: 8px;
+        border-left: 1px solid;
+    }
+}
+
+
+/* For Education Section */
+.previewEducation .education{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .dates,
+    .location{
+        justify-self: end;
+    }
+
+    .dates, .programmeName{
+        font-style: italic;
+        /* font-size: 0.9em; */
+    }
+
+    .institutionName{
+        font-weight: bold;
+    }
+}
+
+
+.resumeDownloadBtn{
+    position: absolute;
+    right: 50px;
+    top: 120px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(126, 34, 206, 0.25);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: none;
+    transition: 0.1s ease-out transform, 0.1s ease-out box-shadow, 0.1s ease-out background-color;
+}
+
+.resumeDownloadBtn:hover{
+    background-color: rgba(126, 34, 206, 0.5);
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.resumeDownloadBtn:active{
+    background-color: rgba(126, 34, 206, 0.75);
+}
