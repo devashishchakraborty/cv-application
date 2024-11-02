@@ -21,3 +21,16 @@ main > div{
     padding: 24px;
     flex: 1;
 }
+
+footer{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--color-scheme-background);
+    color: white;
+    a {
+        color: white;
+    }
+}
