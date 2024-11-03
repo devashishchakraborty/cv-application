@@ -6,11 +6,11 @@
 
 .cvEditor > div {
     border: 2px solid var(--color-scheme-border-dark);
-    border-radius: 16px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 16px;
+    padding: 16px 24px;
 
 }
 
@@ -118,12 +118,12 @@ textarea:focus {
 
 .editGeneralInfo > fieldset,
 .editSkills > fieldset{
-    border-radius: 16px;
+    border-radius: 8px;
     border: 2px solid var(--color-scheme-border-dark);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    padding: 16px;
+    padding: 16px 24px;
 }
 
 .editGeneralInfo legend,
