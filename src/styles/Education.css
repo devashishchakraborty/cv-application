@@ -11,5 +11,6 @@
 
     .location{
         justify-self: end;
+        font-style: italic;
     }
 }

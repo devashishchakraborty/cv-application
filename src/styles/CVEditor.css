@@ -2,15 +2,16 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    font-size: 0.9em;
 }
 
 .cvEditor > div {
-    border: 2px solid var(--color-scheme-border-dark);
+    /* border: 2px solid var(--color-scheme-border-dark); */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 16px 24px;
+    padding: 16px 16px;
 
 }
 
@@ -24,8 +25,8 @@ form .description{
     background-color: var(--color-button-click);
     border-radius: 50%;
     font-size: 2.5em;
-    height: 40px;
-    width: 40px;
+    height: 1em;
+    width: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,26 +117,29 @@ textarea:focus {
 }
 
 
-.editGeneralInfo > fieldset,
-.editSkills > fieldset{
+.editGeneralInfo,
+.editSkills{
     border-radius: 8px;
-    border: 2px solid var(--color-scheme-border-dark);
+    /* border: 1px solid var(--color-scheme-border-dark); */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    padding: 16px 24px;
+    padding: 16px 16px;
 }
 
-.editGeneralInfo legend,
-.editSkills legend{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1.6em;
-    color: var(--color-scheme-dark);
-    font-weight: bold;
-    flex: 1;
-    padding: 0 8px;
+.editGeneralInfo,
+.editSkills,
+.editExperience,
+.editEducation,
+.editProjects{
+    box-shadow: 0 2px 16px 0 rgba(88, 28, 135, 0.3);
+}
+
+.editGeneralInfo .sectionTitle,
+.editSkills .sectionTitle{
+    grid-column: span 2;
+    border-bottom: 1px solid var(--color-scheme-border-dark);
+    padding-bottom: 8px;
 }
 
 .educationList,
