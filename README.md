@@ -4,7 +4,7 @@
 - Live Preview -> [Here](https://cv-application-7ec.pages.dev/)
 
 ## Screenshots
-![image](https://github.com/user-attachments/assets/0a235483-1cc7-4ac1-ae42-cc6065b45258)
+![image](https://github.com/user-attachments/assets/fcffc04a-ad07-452c-928e-c84d14af2952)
 
 ## What I learned
 - Basics of ReactJS
