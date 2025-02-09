@@ -12,6 +12,7 @@
     box-shadow: 0 0 8px #bbb;
     font-size: 0.9em;
     padding: 24px;
+    min-width: 500px;
     .profile .description,
     .previewSkills .details,
     .items {
